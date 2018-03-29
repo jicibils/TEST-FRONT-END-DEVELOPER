@@ -1,0 +1,23 @@
+{
+  "name": "TEST-FRONT-END-DEVELOPER",
+  "homepage": "https://github.com/jicibils/TEST-FRONT-END-DEVELOPER",
+  "authors": [
+    "juan <jicibils@hotmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.7"
+  }
+}
