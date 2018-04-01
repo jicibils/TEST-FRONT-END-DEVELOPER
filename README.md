@@ -1,6 +1,6 @@
 # TEST-FRONT-END-DEVELOPER
 
-# Instalation
+# Installation
 
 1. Clone this repo.
 2. cd into the directory and run npm install
