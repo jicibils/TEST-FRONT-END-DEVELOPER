@@ -1,5 +1,5 @@
-@import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Chicle|Dancing+Script|Great+Vibes|Merienda|Permanent+Marker|Press+Start+2P|Shadows+Into+Light');
+@import "bootstrap";
 
 @mixin vendor-prefix($name, $argument) {
   #{$name}: $argument;

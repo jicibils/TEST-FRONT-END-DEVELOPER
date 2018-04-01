@@ -1,18 +1,14 @@
 var gulp = require('gulp')
 var minjs = require('gulp-uglify')
-var sass = require('gulp-sass')
+var sass = require('gulp-ruby-sass')
 var concat = require('gulp-concat')
 var bower = require('gulp-bower')
-var install = require("gulp-install");
 
 var paths = {
   'bower': './bower_components',
   'assets': './assets',
   'public': './public'
 }
-
-gulp.src(['./bower.json', './package.json'])
-  .pipe(install());
 
 gulp.task('bower', function() {
     return bower()
@@ -24,7 +20,12 @@ gulp.task('styles',function() {
     paths.assets + '/styles/sass/main.scss',
     paths.bower + '/datatables.net-dt/css/jquery.dataTables.css',
   ])
-             .pipe(sass({includePaths: [paths.bower + '/bootstrap/scss']}))
+             .pipe(sass({
+               style: 'compressed',
+               loadPath: [
+                paths.assets + '/styles/sass',
+                paths.bower + '/bootstrap-sass/assets/stylesheets',
+               ]}))
              .pipe(concat('main.css'))
              .pipe(gulp.dest(paths.public + '/css'));
 });
