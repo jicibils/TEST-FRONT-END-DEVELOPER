@@ -1,7 +1,8 @@
 var gulp = require('gulp')
 var minjs = require('gulp-uglify')
 var sass = require('gulp-sass')
-var concat = require('gulp-concat');
+var concat = require('gulp-concat')
+var bower = require('bower')
 
 var paths = {
   'bower': './bower_components',
