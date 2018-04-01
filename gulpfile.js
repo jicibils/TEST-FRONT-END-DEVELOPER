@@ -9,8 +9,16 @@ var paths = {
   'public': './public'
 }
 
+gulp.task('bower', function() {
+    return bower()
+        .pipe(gulp.dest(paths.bower))
+});
+
 gulp.task('styles',function() {
-  return gulp.src([paths.assets + '/styles/sass/main.scss'])
+  return gulp.src([
+    paths.assets + '/styles/sass/main.scss',
+    paths.bower + '/datatables.net-dt/css/jquery.dataTables.css',
+  ])
              .pipe(sass({includePaths: [paths.bower + '/bootstrap/scss']}))
              .pipe(concat('main.css'))
              .pipe(gulp.dest(paths.public + '/css'));
@@ -20,7 +28,9 @@ gulp.task('scripts',function() {
   gulp.src([
     paths.bower + '/jquery/dist/jquery.js',
     paths.bower + '/bootstrap/dist/js/bootstrap.js',
-    // paths.bower + '/bootstrap/js/dist/alert.js',
+    paths.bower + '/jquery-smoove/dist/jquery.smoove.js',
+    paths.bower + '/datatables.net/js/jquery.dataTables.js',
+    paths.bower + '/chart.js/dist/Chart.js',
     paths.assets + '/scripts/main.js'
   ])
   .pipe(concat('main.js'))
@@ -33,30 +43,5 @@ gulp.task('watch',function() {
 })
 
 
-gulp.task('default',['styles','scripts']);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// gulp.task('mainminjs', function() {
-//   gulp.src('./src/js/main.js')
-//       .pipe(minjs())
-//       .pipe(gulp.dest('./build/js/'))
-// })
-//
-// gulp.task('varmainjs',function() {
-//   gulp.watch('./src/js/*.js', ['mainminjs'])
-// })
+gulp.task('default',['bower','styles','scripts']);
+// gulp.task('default',['styles','scripts']);
