@@ -3,12 +3,16 @@ var minjs = require('gulp-uglify')
 var sass = require('gulp-sass')
 var concat = require('gulp-concat')
 var bower = require('gulp-bower')
+var install = require("gulp-install");
 
 var paths = {
   'bower': './bower_components',
   'assets': './assets',
   'public': './public'
 }
+
+gulp.src(['./bower.json', './package.json'])
+  .pipe(install());
 
 gulp.task('bower', function() {
     return bower()

@@ -24,6 +24,7 @@
     "gulp-uglify": "^3.0.0"
   },
   "dependencies": {
-    "gulp-bower": "0.0.14"
+    "gulp-bower": "0.0.14",
+    "gulp-install": "^1.1.0"
   }
 }
