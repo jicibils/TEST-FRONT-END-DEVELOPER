@@ -30,6 +30,18 @@ gulp.task('styles',function() {
              .pipe(gulp.dest(paths.public + '/css'));
 });
 
+// gulp.task('styles', function() {
+//     return sass(paths.assets + '/styles/sass/main.scss', {
+//             // style: 'compressed',
+//             loadPath: [
+//                 paths.assets + '/styles/sass',
+//                 paths.bower + '/bootstrap-sass/assets/stylesheets',
+//             ]
+//         })
+//         .pipe(gulp.dest(paths.public + '/css'));
+// });
+
+
 gulp.task('scripts',function() {
   gulp.src([
     paths.bower + '/jquery/dist/jquery.js',
